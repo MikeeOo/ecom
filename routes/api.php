@@ -7,6 +7,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn () => 'API WORKS!');
 
 Route::prefix('products')->group(function () {
-    Route::get('/', [ProductController::class, 'index']);
-    Route::get('/{product}', [ProductController::class, 'show']);
+    Route::get('/', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
 });
