@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*________________*/
+@layer base {
+    :root {
+        color-scheme: light;
+        font-size: 16px;
+    }
+    body { @apply bg-bg-primary text-base font-[500] text-copy
+        font-poppins
+        /*font-space-mono*/
+        /*font-space-grotesk*/
+    }
+    .border-default {
+        @apply
+        border-border
+        border-2
+        rounded-md
+    }
+    /* Button Component */
+    /* Button */
+    .btn-primary {
+        @apply
+        border-default
+        border-dashed
+        hover-default
+        disabled-default
+    }
+    /* Input + Textarea Component */
+    /* Label */
+    .label-top {
+        @apply
+        text-sm
+        flex pb-1
+        flex-wrap justify-between
+    }
+    /* */
+    /* Input Wrapper */
+    .text-input-wrapper {
+        @apply relative pb-7
+    }
+    /* */
+    /* Input {{ defaults: py-2 px-3 inline-block }} */
+    .text-input {
+        @apply
+        border-default
+        border-dashed
+        relative
+        block w-full px-2
+        hover-default
+        focus-default
+        disabled-default
+    }
+    /* */
+    /* Error Message */
+    .text-input-error {
+        @apply
+        absolute bottom-0 left-0
+        text-error
+    }
+}
+/*______________*/
+@layer utilities {
+    .custom-sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border-width: 0;
+    }
+    .xo-1 { @apply outline outline-1 outline-red-600 }
+    .xo-2 { @apply outline outline-1 outline-amber-400 }
+    .hover-default { @apply hover:border-solid }
+    .focus-default { @apply hover:border-solid }
+    .disabled-default { @apply disabled:opacity-50 disabled:pointer-events-none }
+}
