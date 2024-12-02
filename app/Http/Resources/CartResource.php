@@ -17,6 +17,7 @@ class CartResource extends JsonResource
         return [
             'type' => 'cart',
             'id' => Session::getId() . '_' . ($this->created_at ? $this->created_at->timestamp : time()),
+//            'attributes' => $this->getAttributes(),
             'attributes' => [
                 'items' => $this->items,
                 'count' => $this->count,
@@ -39,6 +40,10 @@ class CartResource extends JsonResource
                 'self' => route('cart.index'),
             ],
         ];
+    }
+    public function isEmpty(): bool
+    {
+        return $this->count === 0;
     }
     private function getItemsData(): array
     {
