@@ -9,6 +9,7 @@ use App\Http\Requests\CartUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Session;
+use Exception;
 use InvalidArgumentException;
 
 class CartController extends Controller
@@ -16,7 +17,13 @@ class CartController extends Controller
     use HttpResponses;
     public function index()
     {
-        dd(session()->all());
+        try {
+            $cartResource = $this->getCart();
+            $message = $cartResource->isEmpty() ? 'Cart is empty' : 'Cart retrieved successfully';
+            return $this->success($cartResource, $message);
+        } catch (Exception $e) {
+            return $this->handleException($e, 'An unexpected error occurred while retrieving the cart.');
+        }
     }
     public function update(CartUpdateRequest $request, Product $product): JsonResponse
     {
