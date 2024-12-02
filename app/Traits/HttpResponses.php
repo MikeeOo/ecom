@@ -2,6 +2,7 @@
 namespace App\Traits;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 
 trait HttpResponses
 {
@@ -40,5 +41,14 @@ trait HttpResponses
     protected function unauthorized(string $message = 'Unauthorized'): JsonResponse
     {
         return $this->error(null, $message, 401);
+    }
+    protected function handleException(\Exception $e, string $customMessage = 'An error occurred', int $code = 500): JsonResponse
+    {
+        Log::error($customMessage . ': ' . $e->getMessage());
+        return $this->error(
+            null,
+            $customMessage,
+            $code
+        );
     }
 }
