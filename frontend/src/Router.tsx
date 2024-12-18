@@ -4,7 +4,6 @@ import Default from "./layouts/Default.tsx";
 import Home from "./pages/Home.tsx";
 import Admin from "./layouts/Admin.tsx";
 import Error from "./layouts/Error.tsx";
-
 export default function Router() {
     return (
         <BrowserRouter>
