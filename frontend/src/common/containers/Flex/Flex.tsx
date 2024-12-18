@@ -11,7 +11,7 @@ import {
     gapClasses,
 } from "./Flex.types";
 const createComponent = (tag: Tag): FC<Props> => {
-    const Component: FC<Props> = ({ children, dir, x, y, wrap, gap, className = "" }) => {
+    const Component: FC<Props> = ({ children, dir, x, y, wrap, gap, className }) => {
         const Element: Tag = tag;
         const styles: string = useMemo(
             () =>
