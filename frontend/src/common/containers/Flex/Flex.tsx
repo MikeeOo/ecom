@@ -43,4 +43,4 @@ export const Flex: Components = {
     Li: createComponent("li"),
     Div: createComponent("div"),
     Span: createComponent("span"),
-} as const;
+};
