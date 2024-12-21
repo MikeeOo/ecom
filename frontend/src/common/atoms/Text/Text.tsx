@@ -1,39 +1,24 @@
-import { FC } from "react";
-import clsx from "clsx";
+import { FC, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
-import { Components, Tag, Props } from "./Text.types.ts";
-const createComponent = (tag: Tag) => {
+import { components, Components, Tag, Props, lineClampClasses, tagClasses, alignClasses } from "./Text.types.ts";
+const createComponent = (tag: Tag): FC<Props> => {
     const Component: FC<Props> = ({ children, text, align, lineClamp, className }) => {
-        const Element: Tag = tag;
-        const styles: string = twMerge(
-            clsx(
-                {
-                    h1: "text-6xl",
-                    h2: "font-semibold text-2xl",
-                    h3: "font-semibold text-xl",
-                    p: "text-base",
-                    div: "text-base",
-                    span: "text-base",
-                }[tag],
-                {
-                    [`line-clamp-${lineClamp}`]: lineClamp && lineClamp !== "truncate",
-                    [`text-${align}`]: align,
-                    truncate: lineClamp === "truncate",
-                },
-            ),
-            className,
+        const Tag: Tag = tag;
+        const styles: string = useMemo(
+            () =>
+                twMerge(
+                    tagClasses[tag],
+                    align && alignClasses[align],
+                    lineClamp && lineClampClasses[lineClamp],
+                    className,
+                ),
+            [tag, align, lineClamp, className],
         );
-        return <Element className={styles}>{text || children}</Element>;
+        return <Tag className={styles}>{text || children}</Tag>;
     };
     Component.displayName = `Text.${tag.toUpperCase()}`;
     return Component;
 };
-export const Text: Components = {
-    H1: createComponent("h1"),
-    H2: createComponent("h2"),
-    H3: createComponent("h3"),
-    H4: createComponent("h4"),
-    P: createComponent("p"),
-    Div: createComponent("div"),
-    Span: createComponent("span"),
-};
+export const Text = Object.fromEntries(
+    Object.entries(components).map(([key, tag]) => [key, createComponent(tag as Tag)]),
+) as Components;

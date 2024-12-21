@@ -1,0 +1,16 @@
+@layer base {
+    :root {
+        color-scheme: light;
+        font-size: 16px;
+    }
+    body {
+        @apply
+        bg-bg-primary
+        text-base
+        text-copy
+        font-[500]
+        font-poppins
+        /*font-space-mono*/
+        /*font-space-grotesk*/
+    }
+}

@@ -1,0 +1,9 @@
+@layer base {
+    .base-h1 { @apply text-6xl }
+    .base-h2 { @apply text-2xl font-semibold }
+    .base-h3 { @apply text-xl font-semibold }
+    .base-h4 { @apply text-base }
+    .base-p { @apply text-base }
+    .base-div { @apply text-base }
+    .base-span { @apply text-base }
+}

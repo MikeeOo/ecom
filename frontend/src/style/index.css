@@ -1,0 +1,9 @@
+/* base */
+@import 'tailwindcss/base';
+@import './base/globals.css';
+@import './base/typography.css';
+/* components */
+@import 'tailwindcss/components';
+/* utilities */
+@import 'tailwindcss/utilities';
+
