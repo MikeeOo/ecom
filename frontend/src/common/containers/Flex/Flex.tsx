@@ -1,18 +1,19 @@
 import { FC, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
-import { Tag } from "../types.ts";
+import { capitalize } from "../../../utils/string-utils.ts";
+import { components, Tag } from "../types.ts";
 import {
     Props,
     Components,
     directionClasses,
     justifyClasses,
     alignClasses,
-    wrapClasses,
     gapClasses,
+    wrapClasses,
 } from "./Flex.types";
 const createComponent = (tag: Tag): FC<Props> => {
-    const Component: FC<Props> = ({ children, dir, x, y, wrap, gap, className }) => {
-        const Element: Tag = tag;
+    const Component: FC<Props> = ({ children, dir, x, y, gap, wrap, className }) => {
+        const Tag: Tag = tag;
         const styles: string = useMemo(
             () =>
                 twMerge(
@@ -20,27 +21,17 @@ const createComponent = (tag: Tag): FC<Props> => {
                     dir && directionClasses[dir],
                     x && justifyClasses[x],
                     y && alignClasses[y],
-                    wrap && wrapClasses[wrap],
                     gap && gapClasses[gap],
+                    wrap && wrapClasses[wrap],
                     className,
                 ),
-            [dir, x, y, wrap, gap, className],
+            [dir, x, y, gap, wrap, className],
         );
-        return <Element className={styles}>{children}</Element>;
+        return <Tag className={styles}>{children}</Tag>;
     };
-    Component.displayName = `Flex.${tag.toUpperCase()}`;
+    Component.displayName = `Flex.${capitalize(tag)}`;
     return Component;
 };
-export const Flex: Components = {
-    Nav: createComponent("nav"),
-    Header: createComponent("header"),
-    Main: createComponent("main"),
-    Footer: createComponent("footer"),
-    Section: createComponent("section"),
-    Article: createComponent("article"),
-    Aside: createComponent("aside"),
-    Ul: createComponent("ul"),
-    Li: createComponent("li"),
-    Div: createComponent("div"),
-    Span: createComponent("span"),
-};
+export const Flex = Object.fromEntries(
+    Object.entries(components).map(([key, tag]) => [key, createComponent(tag as Tag)]),
+) as Components;
