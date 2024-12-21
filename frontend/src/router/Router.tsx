@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import App from "./App.tsx";
-import Default from "./layouts/Default.tsx";
-import Home from "./pages/Home.tsx";
-import Admin from "./layouts/Admin.tsx";
-import Error from "./layouts/Error.tsx";
+import App from "../App.tsx";
+import Default from "../layouts/Default.tsx";
+import Home from "../pages/Home.tsx";
+import Admin from "../layouts/Admin.tsx";
+import Error from "../layouts/Error.tsx";
 export default function Router() {
     return (
         <BrowserRouter>
