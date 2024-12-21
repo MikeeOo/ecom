@@ -50,66 +50,18 @@ export default {
         },
     },
     safelist: [
-        // line clamp
-        "line-clamp-1",
-        "line-clamp-2",
-        "line-clamp-3",
-        "line-clamp-4",
-        "line-clamp-5",
-        "line-clamp-6",
-        // grid
-        "grid-cols-1",
-        "grid-cols-2",
-        "grid-cols-3",
-        "grid-cols-4",
-        "grid-cols-5",
-        "grid-cols-6",
-        "grid-cols-7",
-        "grid-cols-8",
-        "grid-cols-9",
-        "grid-cols-10",
-        "grid-cols-11",
-        "grid-cols-12",
-        // sm:grid
-        "sm:grid-cols-1",
-        "sm:grid-cols-2",
-        "sm:grid-cols-3",
-        "sm:grid-cols-4",
-        "sm:grid-cols-5",
-        "sm:grid-cols-6",
-        "sm:grid-cols-7",
-        "sm:grid-cols-8",
-        "sm:grid-cols-9",
-        "sm:grid-cols-10",
-        "sm:grid-cols-11",
-        "sm:grid-cols-12",
-        // md:grid
-        "md:grid-cols-1",
-        "md:grid-cols-2",
-        "md:grid-cols-3",
-        "md:grid-cols-4",
-        "md:grid-cols-5",
-        "md:grid-cols-6",
-        "md:grid-cols-7",
-        "md:grid-cols-8",
-        "md:grid-cols-9",
-        "md:grid-cols-10",
-        "md:grid-cols-11",
-        "md:grid-cols-12",
-        // lg:grid
-        "lg:grid-cols-1",
-        "lg:grid-cols-2",
-        "lg:grid-cols-3",
-        "lg:grid-cols-4",
-        "lg:grid-cols-5",
-        "lg:grid-cols-6",
-        "lg:grid-cols-7",
-        "lg:grid-cols-8",
-        "lg:grid-cols-9",
-        "lg:grid-cols-10",
-        "lg:grid-cols-11",
-        "lg:grid-cols-12",
-        // etc (could also use regex)
+        // // Flex
+        // /^flex-(row|col)$/,
+        // /^justify-(center|between|around)$/, // (x alignment)
+        // /^items-(center|between|around)$/, // (y alignment)
+        // /^flex-(wrap|wrap-reverse|nowrap)$/,
+        // // Grid
+        // /^(sm:|md:|lg:)?grid-cols-([1-9]|1[0-2])$/,
+        // // Line clamp with truncate
+        // "truncate",
+        // /^line-clamp-[1-6]$/,
+        // // Text alignment
+        // /^text-(left|center)$/,
     ],
     plugins: ["prettier-plugin-tailwindcss", forms],
 };
