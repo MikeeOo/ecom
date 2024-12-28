@@ -4,6 +4,9 @@
 @import './base/typography.css';
 /* components */
 @import 'tailwindcss/components';
+@import './components/border.css';
+@import './components/button.css';
+@import './components/link.css';
 /* utilities */
 @import 'tailwindcss/utilities';
-
+@import './utilities/overrides.css';
