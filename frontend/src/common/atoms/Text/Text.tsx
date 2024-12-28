@@ -1,5 +1,6 @@
 import { FC, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
+import { capitalize } from "../../../utils/string-utils.ts";
 import { components, Components, Tag, Props, lineClampClasses, tagClasses, alignClasses } from "./Text.types.ts";
 const createComponent = (tag: Tag): FC<Props> => {
     const Component: FC<Props> = ({ children, text, align, lineClamp, className }) => {
@@ -16,7 +17,7 @@ const createComponent = (tag: Tag): FC<Props> => {
         );
         return <Tag className={styles}>{text || children}</Tag>;
     };
-    Component.displayName = `Text.${tag.toUpperCase()}`;
+    Component.displayName = `Text.${capitalize(tag)}`;
     return Component;
 };
 export const Text = Object.fromEntries(
