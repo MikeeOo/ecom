@@ -1,0 +1,21 @@
+@layer utilities {
+    /*.custom-sr-only {*/
+    /*    position: absolute;*/
+    /*    width: 1px;*/
+    /*    height: 1px;*/
+    /*    padding: 0;*/
+    /*    margin: -1px;*/
+    /*    overflow: hidden;*/
+    /*    clip-path: inset(50%);*/
+    /*    white-space: nowrap;*/
+    /*    border-width: 0;*/
+    /*}*/
+    .utils-log { @apply outline outline-1 outline-red-600 }
+    .utils-log-1 { @apply outline outline-1 outline-red-600 }
+    .utils-log-2 { @apply outline outline-1 outline-amber-400 }
+    /*____*/
+    .utils-active { @apply text-rose-500 }  /*TODO: CHANGE*/
+    .utils-hover { @apply hover:border-solid } /*TODO: CHANGE*/
+    .utils-focus { @apply hover:border-solid } /*TODO: CHANGE*/
+    .utils-disabled { @apply disabled:opacity-50 disabled:pointer-events-none }
+}
