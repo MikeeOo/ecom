@@ -1,4 +1,4 @@
-import { FC, JSX, useMemo } from "react";
+import { FC, JSX } from "react";
 import { twMerge } from "tailwind-merge";
 import { capitalize } from "../../../utils/string-utils.ts";
 import { shapeClasses } from "../types.ts";
