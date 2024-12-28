@@ -1,0 +1,7 @@
+@layer components {
+    .border-default {
+        @apply
+        border-border
+        border
+    }
+}

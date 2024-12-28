@@ -1,0 +1,17 @@
+@layer components {
+    /* __Button Base__ */
+    .btn { @apply inline-flex items-center justify-center }
+    /* __Button Variant__ */
+    .btn-primary {
+        @apply
+        btn
+        bg-gray-300
+        border-default
+        utils-hover
+        utils-disabled
+    }
+    /* __Button Shape__ */
+    .btn-square { @apply p-2 }
+    .btn-rectangle { @apply px-4 py-2 }
+    .btn-round { @apply p-2 rounded-full }
+}
