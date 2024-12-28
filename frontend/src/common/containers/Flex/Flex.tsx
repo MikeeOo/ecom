@@ -1,16 +1,8 @@
 import { FC, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 import { capitalize } from "../../../utils/string-utils.ts";
-import { components, Tag } from "../types.ts";
-import {
-    Props,
-    Components,
-    directionClasses,
-    justifyClasses,
-    alignClasses,
-    gapClasses,
-    wrapClasses,
-} from "./Flex.types";
+import { components, gapClasses, Tag } from "../types.ts";
+import { Props, Components, directionClasses, justifyClasses, alignClasses, wrapClasses } from "./Flex.types";
 const createComponent = (tag: Tag): FC<Props> => {
     const Component: FC<Props> = ({ children, dir, x, y, gap, wrap, className }) => {
         const Tag: Tag = tag;
