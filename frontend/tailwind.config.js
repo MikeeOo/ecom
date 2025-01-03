@@ -18,7 +18,7 @@ export default {
                 // "2xl": "1536px", // default
             },
             padding: {
-                DEFAULT: "2rem",
+                DEFAULT: "0",
                 sm: "2rem",
                 lg: "2rem",
                 xl: "2rem",
