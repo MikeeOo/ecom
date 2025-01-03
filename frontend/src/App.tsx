@@ -1,5 +1,5 @@
-import { JSX } from "react";
+import { ReactElement } from "react";
 import { Outlet } from "react-router";
-export default function App(): JSX.Element {
+export default function App(): ReactElement {
     return <Outlet />;
 }
