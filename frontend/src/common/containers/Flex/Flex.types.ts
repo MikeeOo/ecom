@@ -32,6 +32,7 @@ export type Props = {
     gap?: keyof typeof gapClasses;
     wrap?: keyof typeof wrapClasses;
     className?: string;
+    container?: string;
 };
 export type Components = {
     [K in keyof typeof components]: FC<Props>;

@@ -4,12 +4,13 @@ import { capitalize } from "../../../utils/string-utils.ts";
 import { components, gapClasses, Tag } from "../types.ts";
 import { Props, Components, directionClasses, justifyClasses, alignClasses, wrapClasses } from "./Flex.types";
 const createComponent = (tag: Tag): FC<Props> => {
-    const Component: FC<Props> = ({ children, dir, x, y, gap, wrap, className }) => {
+    const Component: FC<Props> = ({ children, dir, x, y, gap, wrap, className, container }) => {
         const Tag: Tag = tag;
         const styles: string = useMemo(
             () =>
                 twMerge(
                     "flex",
+                    container && "container",
                     dir && directionClasses[dir],
                     x && justifyClasses[x],
                     y && alignClasses[y],
