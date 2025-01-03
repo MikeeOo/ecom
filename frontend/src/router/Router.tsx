@@ -5,21 +5,23 @@ import DefaultLayout from "../layouts/DefaultLayout.tsx";
 import HomePage from "../pages/HomePage.tsx";
 import LoginPage from "../pages/LoginPage.tsx";
 import RegisterPage from "../pages/RegisterPage.tsx";
+import CartPage from "../pages/CartPage.tsx";
 import AdminLayout from "../layouts/AdminLayout.tsx";
 import ErrorLayout from "../layouts/ErrorLayout.tsx";
+import { ROUTES } from "../constants";
 export default function Router(): ReactElement {
     return (
         <BrowserRouter>
             <Routes>
                 <Route element={<App />}>
                     <Route element={<DefaultLayout />}>
-                        <Route index element={<HomePage />} />
-                        <Route path="/home" element={<HomePage />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/register" element={<RegisterPage />} />
+                        <Route path={ROUTES.HOME} element={<HomePage />} />
+                        <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+                        <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
+                        <Route path={ROUTES.CART} element={<CartPage />} />
                     </Route>
-                    <Route path="/admin" element={<AdminLayout />} />
-                    <Route path="*" element={<ErrorLayout />} />
+                    <Route path={ROUTES.ADMIN} element={<AdminLayout />} />
+                    <Route path={ROUTES.ALL} element={<ErrorLayout />} />
                 </Route>
             </Routes>
         </BrowserRouter>

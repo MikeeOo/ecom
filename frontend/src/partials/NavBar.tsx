@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { Flex, Wrapper } from "../common/containers";
 import { Link } from "../common/atoms";
+import { ROUTES } from "../constants";
 import { LuShoppingCart, LuUser } from "react-icons/lu";
 import { MdOutlineStoreMallDirectory } from "react-icons/md";
 export default function NavBar(): ReactElement {
@@ -8,7 +9,7 @@ export default function NavBar(): ReactElement {
         <Wrapper.Header className="fixed w-full border-b border-black bg-white">
             <Flex.Nav x="between" y="center" container>
                 <Link.Nav
-                    route="/"
+                    route={ROUTES.HOME}
                     type="nav"
                     shape="square"
                     iconLeft={<MdOutlineStoreMallDirectory className="text-2xl" />}
@@ -17,11 +18,16 @@ export default function NavBar(): ReactElement {
                 />
                 <Flex.Ul>
                     <Wrapper.Li>
-                        <Link.Nav route="/login" type="nav" shape="rectangle" icon={<LuUser className="text-2xl" />} />
+                        <Link.Nav
+                            route={ROUTES.LOGIN}
+                            type="nav"
+                            shape="rectangle"
+                            icon={<LuUser className="text-2xl" />}
+                        />
                     </Wrapper.Li>
                     <Wrapper.Li>
                         <Link.Nav
-                            route="/cart"
+                            route={ROUTES.CART}
                             type="nav"
                             shape="rectangle"
                             icon={<LuShoppingCart className="text-2xl" />}
