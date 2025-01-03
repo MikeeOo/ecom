@@ -1,0 +1,49 @@
+@layer components {
+    /* Label text-size and font-weight */
+    .input-label-typography { @apply text-xs font-[600] }
+    /* Label */
+    .input-label {
+        @apply input-label-typography
+        flex flex-nowrap justify-between
+    }
+    .input-label-content {
+        @apply px-2 py-1
+        border-default border-b-0
+        group-focus-within:!bg-black
+        group-focus-within:!text-white
+        group-focus-within:!border-black
+    }
+    .input-label-helper {
+        @apply px-2 py-1
+        line-clamp-1
+        max-h-[22px]
+        opacity-70
+    }
+    /* Input | defaults: py-2 px-3 inline-block text-[1rem] */
+    .input-wrapper {
+        @apply
+        border-default
+        hover:border-default
+    }
+    .input {
+        @apply w-full block font-[400]
+        truncate
+        border-white
+        group-hover/input-wrapper:border-white
+        /* Input:focus */
+        focus:!border-black
+        focus:ring-0
+        focus:outline-none
+        utils-disabled
+    }
+    /* Input:hover */
+    .input-label:has(+ div.group\/input-wrapper:hover) .input-label-content {
+        @apply bg-zinc-300 text-black border-black;
+    }
+    /* Error Message */
+    .input-error {
+        @apply input-label-typography
+        block pt-1
+        utils-error-text
+    }
+}
