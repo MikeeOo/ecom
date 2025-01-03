@@ -1,4 +1,6 @@
 @layer components {
     .link-text { @apply inline-block w-fit hover:underline }
+    /*.link-nav { @apply block hover:bg-zinc-200 }*/
+    .link-nav { @apply block border-white border-l border-r hover:border-black hover:border-l hover:border-r hover:bg-zinc-300 }
     .link-wrapper { @apply block }
 }
