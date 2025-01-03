@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input, Submit, Text } from "../common/atoms";
 import { Flex, Form } from "../common/containers";
 import { LoginInput, loginSchema } from "../schemas/login.schema.ts";
-// TODO: change LoginFormData to LoginSchema
 export default function LoginPage(): ReactElement {
     const { register, handleSubmit } = useForm<LoginInput>({
         resolver: zodResolver(loginSchema),

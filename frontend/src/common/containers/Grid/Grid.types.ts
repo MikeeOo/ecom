@@ -20,6 +20,7 @@ export type Props = {
     cols: [GridCols?, GridCols?, GridCols?, GridCols?];
     gap?: keyof typeof gapClasses;
     className?: string;
+    container?: boolean;
 };
 export type Components = {
     [K in keyof typeof components]: FC<Props>;
