@@ -1,8 +1,10 @@
-import { JSX } from "react";
-export default function Footer(): JSX.Element {
+import { ReactElement } from "react";
+import { Text } from "../common/atoms";
+import { Wrapper } from "../common/containers";
+export default function Footer(): ReactElement {
     return (
-        <>
-            <div className="bg-black text-white">That's footer</div>
-        </>
+        <Wrapper.Footer className="border-t border-black">
+            <Text.P align="center" text="Footer Placeholder..." className="container py-2" />
+        </Wrapper.Footer>
     );
 }
