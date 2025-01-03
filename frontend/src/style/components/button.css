@@ -7,11 +7,10 @@
         btn
         bg-gray-300
         border-default
-        utils-hover
         utils-disabled
     }
     /* __Button Shape__ */
     .btn-square { @apply p-2 }
-    .btn-rectangle { @apply px-4 py-2 }
+    .btn-rectangle { @apply px-3 py-2 }
     .btn-round { @apply p-2 rounded-full }
 }
