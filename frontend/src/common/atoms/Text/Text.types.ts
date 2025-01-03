@@ -18,6 +18,11 @@ export const tagClasses = {
     div: "base-div",
     span: "base-span",
 } as const;
+export const sizeClasses = {
+    xl: "text-size-xl",
+    md: "text-size-md",
+    sm: "text-size-sm",
+} as const;
 export const lineClampClasses = {
     "1": "line-clamp-1",
     "2": "line-clamp-2",
@@ -36,6 +41,7 @@ export const alignClasses = {
 export type Props = {
     children?: ReactNode;
     text?: string;
+    size?: "xl" | "md" | "sm";
     align?: "left" | "center";
     lineClamp?: "1" | "2" | "3" | "4" | "5" | "6" | "truncate" | "none";
     className?: string;
