@@ -6,4 +6,5 @@ export type Props = {
     noValidate?: boolean;
     autoComplete?: string;
     className?: string;
+    container?: boolean;
 };
