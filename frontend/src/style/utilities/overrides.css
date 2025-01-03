@@ -14,8 +14,10 @@
     .utils-log-1 { @apply outline outline-1 outline-red-600 }
     .utils-log-2 { @apply outline outline-1 outline-amber-400 }
     /*____*/
-    .utils-active { @apply text-rose-500 }  /*TODO: CHANGE*/
-    .utils-hover { @apply hover:border-solid } /*TODO: CHANGE*/
-    .utils-focus { @apply hover:border-solid } /*TODO: CHANGE*/
+    .utils-error-text { @apply text-red-500 }
+    .utils-error-border { @apply border-red-500 }
+    .utils-error-bg { @apply bg-red-500 }
+    /*____*/
+    .utils-active { @apply !bg-black !text-white !border-black }
     .utils-disabled { @apply disabled:opacity-50 disabled:pointer-events-none }
 }
