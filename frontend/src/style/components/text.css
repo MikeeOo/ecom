@@ -1,0 +1,5 @@
+@layer components {
+    .text-size-xl { @apply text-6xl }
+    .text-size-md { @apply text-lg font-[600] }
+    .text-size-sm { @apply text-xl font-semibold }
+}
