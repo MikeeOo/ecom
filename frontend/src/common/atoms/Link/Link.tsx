@@ -1,4 +1,4 @@
-import { JSX, FC, useMemo } from "react";
+import { ReactElement, FC, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 import { Link as RouterLink, NavLink } from "react-router";
 import { shapeClasses } from "../types.ts";
@@ -21,7 +21,7 @@ const createComponent = (tag: Tag): FC<Props> => {
             () => twMerge(typeClasses[type], shape && shapeClasses[shape], className),
             [type, shape, className],
         );
-        const linkContent: JSX.Element = (
+        const linkContent: ReactElement = (
             <>
                 {icon || iconLeft}
                 {text && text}

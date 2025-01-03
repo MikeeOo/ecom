@@ -15,6 +15,7 @@ export type Tag = (typeof components)[keyof typeof components];
 export const typeClasses = {
     text: "link-text",
     "btn-primary": "btn-primary",
+    nav: "link-nav",
     wrapper: "link-wrapper",
 } as const;
 export type Props = {
