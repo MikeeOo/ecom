@@ -1,4 +1,4 @@
-export default function Admin() {
+export default function AdminLayout() {
     return (
         <>
             <div>That's admin layout</div>
