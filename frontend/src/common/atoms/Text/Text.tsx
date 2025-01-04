@@ -17,13 +17,19 @@ const createComponent = (tag: Tag): FC<Props> => {
         const styles: string = useMemo(
             () =>
                 twMerge(
-                    tagClasses[tag],
+                    // tagClasses[tag],
                     size && sizeClasses[size],
                     align && alignClasses[align],
                     lineClamp && lineClampClasses[lineClamp],
                     className,
                 ),
-            [tag, size, align, lineClamp, className],
+            [
+                // tag,
+                size,
+                align,
+                lineClamp,
+                className,
+            ],
         );
         return <Tag className={styles}>{text || children}</Tag>;
     };
