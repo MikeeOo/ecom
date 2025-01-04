@@ -10,6 +10,7 @@ export const components = {
     Li: "li",
     Div: "div",
     Span: "span",
+    Form: "form",
 } as const;
 export type Tag = (typeof components)[keyof typeof components];
 export const gapClasses = {
