@@ -5,8 +5,15 @@
     .btn-primary {
         @apply
         btn
-        bg-gray-300
+        bg-black
+        /*bg-zinc-700*/
+        text-white
         border-default
+        /*hover:bg-opacity-75*/
+        /*hover:bg-zinc-700*/
+        /*hover:rotate-1*/
+        /*hover:border-zinc-500*/
+        /*hover:text-black*/
         utils-disabled
     }
     /* __Button Shape__ */

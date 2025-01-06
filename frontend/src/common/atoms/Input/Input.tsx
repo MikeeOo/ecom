@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { capitalize } from "../../../utils/string-utils";
 import { types, Type, Props, Components, BaseProps } from "./Input.types";
 const Base: FC<BaseProps> = ({ children, id, labelType, labelText, helper, error, labelClass, className }) => {
-    const wrapper: string = twMerge("group", error ? "pb-1" : "pb-3", className);
+    const wrapper: string = twMerge("group", error ?? "pb-3", className);
     const labelStyles: string = twMerge("input-label", labelType === "hidden" && "sr-only", labelClass);
     const labelContent: string = twMerge(
         "input-label-content",

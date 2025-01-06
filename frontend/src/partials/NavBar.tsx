@@ -19,7 +19,7 @@ export default function NavBar(): ReactElement {
                 <Flex.Ul>
                     <Wrapper.Li>
                         <Link.Nav
-                            route={ROUTES.LOGIN}
+                            route={ROUTES.AUTH}
                             type="nav"
                             shape="rectangle"
                             icon={<LuUser className="text-2xl" />}

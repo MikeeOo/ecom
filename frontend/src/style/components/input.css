@@ -43,7 +43,8 @@
     /* Error Message */
     .input-error {
         @apply input-label-typography
-        block pt-1
+        block
+        pb-1.5 pt-0.5
         utils-error-text
     }
 }
