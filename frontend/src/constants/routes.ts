@@ -1,9 +1,10 @@
 export const ROUTES: Routes = {
     HOME: "/",
-    LOGIN: "/login",
-    REGISTER: "/register",
     CART: "/cart",
+    AUTH: "/auth",
+    LOGIN: "/auth/login",
+    REGISTER: "/auth/register",
     ADMIN: "/admin",
-    ALL: "*",
+    REST: "*",
 } as const;
 type Routes = (typeof ROUTES)[keyof typeof ROUTES];
