@@ -17,9 +17,10 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::all()->random()->id,
+//            'user_id' => User::all()->random()->id,
             'name' => fake()->words(3, true),
-            'image_url' => fake()->optional()->imageUrl(),
+//            'image_url' => fake()->optional()->imageUrl(),
+            'image_url' => fake()->imageUrl(),
             'brand' => fake()->company(),
             'category' => fake()->word(),
             'description' => fake()->paragraph(),

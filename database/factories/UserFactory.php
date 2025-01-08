@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,14 +23,35 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => static::$password ??= Hash::make('Password@123'),
+            'is_admin' => false,
             'remember_token' => Str::random(10),
         ];
     }
-
+    public function admin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'a@a.com',
+            'password' => Hash::make('Password@123'),
+            'is_admin' => true,
+        ]);
+    }
+    public function user(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'first_name' => 'Jane',
+            'last_name' => 'Doe',
+            'email' => 'b@b.com',
+            'password' => Hash::make('Password@123'),
+            'is_admin' => false,
+        ]);
+    }
     /**
      * Indicate that the model's email address should be unverified.
      */
