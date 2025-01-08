@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProductController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 
 // These routes are loaded by the RouteServiceProvider and all of them will be assigned to the "api" middleware group.
