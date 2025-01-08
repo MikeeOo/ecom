@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(): ProductCollection
     {
         $products = Product::paginate();
         return new ProductCollection($products);
     }
-    public function show(Product $product)
+    public function show(Product $product): ProductResource
     {
         return new ProductResource($product);
     }
