@@ -38,7 +38,7 @@ class UserFactory extends Factory
             'first_name' => 'John',
             'last_name' => 'Doe',
             'email' => 'a@a.com',
-            'password' => Hash::make('Password@123'),
+            'password' => Hash::make('JohnDoea@a.com123'),
             'is_admin' => true,
         ]);
     }
@@ -48,7 +48,7 @@ class UserFactory extends Factory
             'first_name' => 'Jane',
             'last_name' => 'Doe',
             'email' => 'b@b.com',
-            'password' => Hash::make('Password@123'),
+            'password' => Hash::make('JaneDoeb@b.com123'),
             'is_admin' => false,
         ]);
     }
