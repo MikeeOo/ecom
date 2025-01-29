@@ -18,3 +18,5 @@ trait CamelizeArrayKeys
         return $result;
     }
 }
+
+// test
