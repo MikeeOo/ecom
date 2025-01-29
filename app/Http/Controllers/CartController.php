@@ -15,7 +15,7 @@ use InvalidArgumentException;
 class CartController extends Controller
 {
     use HttpResponses;
-    public function index()
+    public function index(): JsonResponse
     {
         try {
             $cartResource = $this->getCart();
@@ -91,7 +91,7 @@ class CartController extends Controller
         };
     }
     //
-    public function destroy(Request $request)
+    public function destroy(Request $request): string
     {
         $request->session()->flush();
         return 'Session cleared';
