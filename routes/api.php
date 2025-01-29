@@ -1,25 +1,31 @@
 <?php
 
 use App\Http\Controllers\{AuthController, ProductController, CartController};
-use App\Constants\Routes;
-use App\Constants\Methods;
+use App\Constants\Routes as R;
+use App\Constants\Methods as M;
+use App\Constants\Types as T;
+use App\Constants\Models;
+use App\Constants\Names as N;
 
 //use Illuminate\Support\Facades\Route;
 //Route::middleware('api')->group(function () {});
 // These routes are loaded by the RouteServiceProvider and all of them will be assigned to the "api" middleware group.
 // all routes: '/api'
-Route::get(Routes::ROOT, fn () => 'API WORKS!');
-Route::post(Routes::LOGIN, [AuthController::class, Methods::LOGIN]);
-Route::post(Routes::REGISTER, [AuthController::class, Methods::REGISTER]);
-// '/products'
-Route::get(Routes::PRODUCTS, [ProductController::class, Methods::INDEX]);
-Route::get(Routes::PRODUCT, [ProductController::class, Methods::SHOW])->name('products.show');
-// '/cart'
-Route::get(Routes::CART, [CartController::class, Methods::INDEX]);
-Route::patch(Routes::CART_ITEM, [CartController::class, Methods::UPDATE]);
-Route::delete(Routes::CART, [CartController::class, Methods::DESTROY]);
-// !!!___PROTECTED ROUTES___!!!
+//Route::get('/', fn () => 'API WORKS!');
+Route::post('/' . M::LOGIN, [AuthController::class, M::LOGIN]);
+Route::post('/' . M::REGISTER, [AuthController::class, M::REGISTER]);
+
+Route::get('/' . T::PRODUCTS, [ProductController::class, M::INDEX]);
+//Route::get('/' . T::PRODUCTS . '/{' . Models::PRODUCT . '}', [ProductController::class, M::SHOW])->name('products.show');
+Route::get('/' . T::PRODUCTS . '/{' . Models::PRODUCT . '}', [ProductController::class, M::SHOW])->name(N::PRODUCTS_SHOW);
+
+//Route::group()
+Route::get('/' . T::CART, [CartController::class, M::INDEX]);
+Route::patch('/' . T::CART . '/{' . Models::PRODUCT . '}', [CartController::class, M::UPDATE]);
+Route::delete('/' . T::CART, [CartController::class, M::DESTROY]);
+
+// Protected routes
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post(Routes::LOGOUT, [AuthController::class, Methods::LOGOUT]);
+    Route::post(R::LOGOUT, [AuthController::class, M::LOGOUT]);
     //        Route::get('/users', [UserController::class, 'index']);
 });

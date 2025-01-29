@@ -3,15 +3,14 @@ namespace App\Constants;
 
 class Routes
 {
-    public const ROOT = '/';
     // Auth routes
-    public const LOGIN = self::ROOT . Methods::LOGIN;
-    public const REGISTER = self::ROOT . Methods::REGISTER;
-    public const LOGOUT = self::ROOT . Methods::LOGOUT;
+    public const LOGIN = '/' . Methods::LOGIN;
+    public const REGISTER = '/' . Methods::REGISTER;
+    public const LOGOUT = '/' . Methods::LOGOUT;
     // Product routes
-    public const PRODUCTS = self::ROOT . Models::PRODUCT . 's';
-    public const PRODUCT = self::PRODUCTS . self::ROOT . '{' . Models::PRODUCT . '}';
+    public const PRODUCTS = '/products';
+    public const PRODUCT = '/products/{product}';
     // Cart routes
-    public const CART = self::ROOT . Models::CART;
-    public const CART_ITEM = self::CART . self::ROOT . '{' . Models::PRODUCT . '}';
+    public const CART = '/cart';
+    public const CART_ITEM = '/cart/{product}';
 }
